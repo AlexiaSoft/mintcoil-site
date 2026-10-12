@@ -66,6 +66,16 @@ const AxeBuilder = require('@axe-core/playwright').default;
             assert(await page.locator('.product-logo').first().evaluate(image => image.complete && image.naturalWidth === 879 && image.naturalHeight === 259 && Math.abs(image.width / image.height - 879 / 259) < .1));
             assert.equal(await page.locator('.brand-name').count(), 0, 'Do not duplicate text beside a full wordmark');
             assert.equal(await page.locator('#faq .faq-list details').count(), 6);
+            const documentFaq = page.locator('#faq details').filter({ hasText: 'รับเข้าหรือเบิกหลายม้วนพร้อมกันได้ไหม?' });
+            assert((await documentFaq.locator('p').textContent()).includes('เมนูรับเข้าและเบิกออกใช้ฟอร์มเอกสาร 1–100'));
+            assert((await documentFaq.locator('p').textContent()).includes('บันทึกเป็นเอกสาร 1 รายการ'));
+            const attachmentFaq = page.locator('#faq details').filter({ hasText: 'รองรับการเบิกบางส่วนหรือแนบใบส่งของไหม?' });
+            await attachmentFaq.locator('summary').focus();
+            await page.keyboard.press('Enter');
+            assert(await attachmentFaq.locator('p').isVisible());
+            const attachmentText = await attachmentFaq.locator('p').innerText();
+            for (const text of ['ไม่เบิกบางส่วน', 'เอกสารรับเข้า', 'PDF / JPEG / PNG', '1 ไฟล์', '5 MiB', 'Private', 'ดาวน์โหลดตามสิทธิ์', 'ต้องตรวจโฮสต์และทดสอบกับทีม']) assert(attachmentText.includes(text), `Missing attachment scope: ${text}`);
+            assert(!(await page.locator('#faq').textContent()).includes('อยู่ระหว่าง'));
             assert.equal(await page.locator('#pricing .price-plan').count(), 4);
             for (const [model, plan, price, annual, users, warehouses, setup] of [
                 ['subscription', 'core', '฿2,900', '฿29,000 / ปี · คิด 10 เดือน', '5 บัญชี', '2 แห่ง', '฿15,000'],
@@ -157,7 +167,12 @@ const AxeBuilder = require('@axe-core/playwright').default;
             assert.equal(response.status(), 200);
             assetBytes.set(asset, (await response.body()).length);
         }
-        assert([...assetBytes.values()].reduce((sum, bytes) => sum + bytes, 0) < 98304, 'Static assets including approved PNG logo exceed 96KiB local budget');
+        // Keep the original supplied RGBA file unchanged; do not spend its separate allowance on HTML/CSS/JS.
+        const logoBytes = assetBytes.get('assets/images/mintcoil_logo.png');
+        const coreBytes = [...assetBytes.values()].reduce((sum, bytes) => sum + bytes, 0) - logoBytes;
+        assert(coreBytes < 65536, 'Non-PNG core assets exceed original 64KiB local budget');
+        assert(logoBytes < 65536, 'Supplied PNG logo exceeds separate 64KiB local budget');
+        assert(coreBytes + logoBytes < 131072, 'Static assets including supplied PNG logo exceed 128KiB local budget');
         let screenshotBytes = 0;
         for (const name of ['dashboard', 'layout', 'receive', 'reports']) {
             const src = `assets/images/screen-${name}.webp`;
@@ -197,6 +212,8 @@ const AxeBuilder = require('@axe-core/playwright').default;
         await noJs.locator('#site-nav a[href="#pricing"]').click();
         assert(noJs.url().endsWith('#pricing'));
         assert.equal(await noJs.locator('#pricing .price-plan').count(), 4);
+        await noJs.locator('#faq details').filter({ hasText: 'รองรับการเบิกบางส่วนหรือแนบใบส่งของไหม?' }).locator('summary').click();
+        assert(await noJs.getByText('ทำรายการเป็นม้วนเต็ม ไม่เบิกบางส่วน', { exact: false }).isVisible());
         await noJs.locator('#site-nav a[href="#contact"]').click();
         assert(noJs.url().endsWith('#contact'));
         assert(await noJs.evaluate(() => document.documentElement.scrollWidth <= innerWidth));

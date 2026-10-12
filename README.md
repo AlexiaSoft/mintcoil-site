@@ -7,16 +7,24 @@ Deploy independently of `mintcoil/`.
 ## Current: supplied MintCoil wordmark (Phase39)
 
 Header/Footer now use user-supplied `assets/images/mintcoil_logo.png` (879×259),
-unchanged original white background/clear space.200px wide/auto height;180px on
+unchanged original RGBA transparency/clear space.200px wide/auto height;180px on
 small phones. Semantic alt text and no duplicate MintCoil text. SVG Coil icon stays
 favicon. Application public PNG is byte-identical but runtime/deploy independent.
 
-Latest complete app173/3,602 and Browser pass; site five-width/axe/price/nav/FAQ/
-no-JS/delayed-JS CLS/fallback pass. Initial320px menu wrap fixed via180px logo,
-not relaxing CLS. Lighthouse100/100/100/100,LCP1.5s,CLS0. Core including PNG89,933
-bytes (<96KiB budget updated explicitly for user-approved25KiB logo); screen/social
-budgets unchanged. Logs `/tmp/mintcoil-logo-{feature,browser,site}.log`. Real devices/
-Safari/deploy pending. Original artwork not cropped/recoloured or used as square favicon.
+Latest source reconciliation uses the current57,292-byte site/user PNG unchanged,
+SHA256 `22baa15e8db47e4acd3b16828a37f95c4c05ade66d50c0590ad16c65205cc34d`.
+Only the older application PNG was replaced; dimensions/colours/transparency and
+independent deploys retained. Foundation PNG/SVG equality/local assets pass again.
+Complete app182 tests/3,860 assertions and full Browser pass. Site five-width/axe/
+price/nav/expanded attachment FAQ/no-JS/delayed-JS CLS/fallback pass. Initial320px
+menu wrap remains fixed via180px logo, not relaxing CLS. Lighthouse100/100/100/100,
+LCP1.7s,CLS0 (local simulated mobile, not production/device certification).
+Non-PNG core64,886 bytes remains below original64KiB ceiling; supplied PNG has its
+own64KiB allowance. Combined122,178 bytes below128KiB; replaces old96KiB ceiling
+which assumed the obsolete25,161-byte RGB PNG. No re-encoding to shrink the supplied
+artwork, no extra HTML/CSS/JS allowance; screenshot/social budgets unchanged.
+Logs `/tmp/mintcoil-final-brand-{feature,browser,site}.log`. Real devices/Safari/
+deploy pending. Original artwork not cropped/recoloured or used as square favicon.
 
 ## Approved MintCoil pricing (Phase38)
 
@@ -68,8 +76,13 @@ No remote fonts, runtime library, tracking, form or site-set cookies added.
 Content describes actual Coil/location/Search/Receive/Move/Transfer/Issue,
 multi-warehouse1–100-line receipt/issue documents, Dashboard/History/Reports,
 use cases and rollout questions. Keep AVAILABLE-only Issue/new-only Receive;
-full-Coil transactions, no partial issue. Attachment, legacy-document entry
-integration, ERP/export/QR/Supplier and human operational acceptance remain pending.
+full-Coil transactions, no partial issue. Receive supports one optional private
+PDF/JPEG/PNG delivery note up to5MiB and permission-controlled downloads; document-first
+sidebar/Map entries and retained single-Coil APIs producing one-line documents are
+implemented/tested. FAQ now reflects both features, including host/UAT caveats;
+expanded keyboard FAQ and no-JS checks prevent stale "under development" claims.
+Private-file approved-host permissions/upload limits/coordinated backup+restore,
+ERP/export/QR/Supplier and human operational acceptance remain pending.
 No MintERP modules/pricing/service guarantees copied. MintCoil-specific starting
 prices subsequently approved in Phase38; final scope/services remain quotation-bound.
 
@@ -133,7 +146,8 @@ Set Chrome path for your platform; omit `RUN_LIGHTHOUSE=1` for browser-only QA.
 Harness copies only index/assets under a temporary `/preview/` static server and
 cleans up. No app/server/database starts, accounts/settings/stock touched.
 
-Latest: Chrome1440/1024/768/375/320, axe WCAG2A/AA+2.1AA, no overflow, menu
+Historical Phase37 evidence (current Phase39 reconciliation above):
+Chrome1440/1024/768/375/320, axe WCAG2A/AA+2.1AA, no overflow, menu
 Escape/resize/focus, native FAQ Enter toggling, delayed-JS startup CLS, no-JS/skip
 link, reduced transparency/motion, allowlisted real contact/family/image links,
 local WebP decode/lazy loading, social MIME/dimensions, no external page requests,
