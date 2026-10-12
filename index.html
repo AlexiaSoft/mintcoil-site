@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MintCoil โดย AlexiaSoft ระบบบริหารคลัง Coil หลายโกดัง พร้อม Visual Warehouse Map ค้นหาตำแหน่ง รับเข้า ย้าย โอน เบิก และประวัติ Movement">
+    <meta name="theme-color" content="#09896b">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:site_name" content="MintCoil">
+    <meta property="og:title" content="MintCoil — Every Coil. Every Location. Under Control.">
+    <meta property="og:description" content="มองเห็นตำแหน่ง Coil ในหลายโกดัง จัดการ Receive / Move / Transfer / Issue พร้อมประวัติที่ตรวจสอบย้อนหลังได้ โดย AlexiaSoft">
+    <!-- Launch: add canonical, og:url and absolute og:image URLs after domain approval.
+         Ready social PNG: assets/images/social-card.png (1200 x 630).
+         Editable source: assets/images/social-card.svg; no public URL is approved yet. -->
+    <title>MintCoil — ระบบบริหารคลัง Coil พร้อม Visual Warehouse Map | AlexiaSoft</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/mintcoil-mark.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <noscript><style>@media (max-width: 767px) { .site-nav { display: flex !important; } }</style></noscript>
+    <script src="assets/js/app.js" defer></script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"MintCoil","applicationCategory":"BusinessApplication","operatingSystem":"Web browser","description":"Coil Warehouse Management System พร้อม Visual Warehouse Map และประวัติการเคลื่อนไหว","creator":{"@type":"Organization","name":"AlexiaSoft"}}
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">ข้ามไปเนื้อหา</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="./" aria-label="MintCoil หน้าแรก"><img class="product-logo" src="assets/images/mintcoil_logo.png" width="879" height="259" alt="MintCoil"><span class="brand-by">by AlexiaSoft</span></a>
+            <button id="menu-toggle" class="button nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" hidden>เมนู</button>
+            <nav id="site-nav" class="site-nav" aria-label="เมนูหลัก">
+                <a href="#overview">ภาพรวม</a><a href="#screens">ภาพหน้าจอ</a><a href="#features">ความสามารถ</a><a href="#pricing">ราคา</a><a href="#getting-started">เริ่มใช้งาน</a><a href="#faq">คำถามที่พบบ่อย</a><a class="button primary" href="#contact">นัดสาธิตระบบ <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+    <main id="main" class="container" tabindex="-1">
+        <section class="hero" aria-labelledby="product-title">
+            <div class="hero-copy">
+                <p class="eyebrow">ระบบบริหารคลังสำหรับทีมที่ทำงานกับ Coil</p>
+                <h1 id="product-title">รู้ว่า Coil อยู่ที่ไหน<br><span class="gradient-text">ตั้งแต่รับเข้า<br>จนถึงเบิกออก</span></h1>
+                <p class="text-muted hero-lead">เชื่อมข้อมูล Coil ตำแหน่งจัดเก็บ และการเคลื่อนไหวไว้ใน MintCoil ดูผังหลายโกดัง ค้นหาม้วนที่ต้องการ และย้อนดูประวัติจากข้อมูลชุดเดียวกัน</p>
+                <div class="actions"><a class="button primary" href="#contact">นัดสาธิตระบบ <span aria-hidden="true">→</span></a><a class="button" href="#screens">ดูหน้าจอระบบ <span aria-hidden="true">→</span></a></div>
+                <p class="small text-muted hero-note"><span aria-hidden="true">✦</span> เริ่มคุยจากผังและขั้นตอนการทำงานของโกดังคุณ</p>
+            </div>
+            <figure id="map-preview" class="glass-card map-preview" tabindex="-1">
+                <figcaption><span class="eyebrow">Visual Warehouse Map · ภาพประกอบ</span><h2>รู้ตำแหน่งก่อนทำรายการ</h2><p class="small text-muted">ข้อมูลสมมติ ไม่ใช่สกรีนช็อตหรือข้อมูล Stock จริง</p></figcaption>
+                <div class="preview-toolbar"><strong>WH-A / Zone A</strong><span class="preview-chip">4 × 4 Positions</span></div>
+                <div class="warehouse-grid" role="img" aria-label="ตัวอย่างผัง 4 คูณ 4 มีช่องว่าง ช่องมี Coil ช่องระงับ และทางเดิน พร้อมรหัสตำแหน่ง">
+                    <div class="cell available"><strong>A01</strong><span>ว่าง</span></div><div class="cell occupied selected"><strong>A02</strong><span>MC-108</span></div><div class="cell occupied"><strong>A03</strong><span>MC-109</span></div><div class="cell blocked"><strong>A04</strong><span>ระงับ</span></div>
+                    <div class="cell available"><strong>B01</strong><span>ว่าง</span></div><div class="cell aisle"><strong>B02</strong><span>ทางเดิน</span></div><div class="cell aisle"><strong>B03</strong><span>ทางเดิน</span></div><div class="cell occupied"><strong>B04</strong><span>MC-110</span></div>
+                    <div class="cell occupied"><strong>C01</strong><span>MC-111</span></div><div class="cell aisle"><strong>C02</strong><span>ทางเดิน</span></div><div class="cell aisle"><strong>C03</strong><span>ทางเดิน</span></div><div class="cell available"><strong>C04</strong><span>ว่าง</span></div>
+                    <div class="cell available"><strong>D01</strong><span>ว่าง</span></div><div class="cell occupied"><strong>D02</strong><span>MC-112</span></div><div class="cell occupied"><strong>D03</strong><span>MC-113</span></div><div class="cell available"><strong>D04</strong><span>ว่าง</span></div>
+                </div>
+                <ul class="legend" aria-label="คำอธิบายผัง"><li><span class="dot available"></span>ว่าง</li><li><span class="dot occupied"></span>มี Coil</li><li><span class="dot blocked"></span>ระงับ</li><li><span class="dot aisle"></span>ทางเดิน</li></ul>
+                <div class="coil-preview"><svg class="icon" aria-hidden="true"><use href="assets/icons/symbols.svg#coil"></use></svg><div><strong>MC-108 → WH-A / A02</strong><p class="small text-muted">สี: Blue · หนา: 0.35 mm · Girth: 760 mm<br>G: 550 · AZ: 150 · 1,500.125 kg · 10.000001 kg/m · 150.000 m</p></div></div>
+            </figure>
+        </section>
+        <div class="trust-strip"><span>Every Coil. Every Location. Under Control.</span><strong>รับเข้า <span aria-hidden="true">→</span> จัดเก็บ <span aria-hidden="true">→</span> เคลื่อนย้าย <span aria-hidden="true">→</span> เบิกออก</strong><span>1 Coil = 1 ม้วน · ตามสิทธิ์ผู้ใช้</span></div>
+        <section id="overview" class="section" aria-labelledby="problem-title" tabindex="-1">
+            <div class="section-heading"><p class="eyebrow">ONE WAREHOUSE FLOW</p><h2 id="problem-title">งานคลังไม่ควรหยุดอยู่<br>แค่รายการ Stock</h2><p class="text-muted">เมื่อสินค้าและตำแหน่งส่งต่อกันได้ ทีมเลือกทำรายการจากผังเดียวกัน และผู้จัดการตรวจสอบประวัติต่อได้</p></div>
+            <div class="card-grid three">
+                <article class="glass-card"><h3>หา Coil ไม่เจอ?</h3><p>เมื่อรายการ Stock กับพื้นที่จริงแยกกัน การค้นหาหนึ่งม้วนอาจต้องถามหลายคน</p></article>
+                <article class="glass-card"><h3>ช่องนี้ว่างจริงไหม?</h3><p>มองผังแยกช่องจัดเก็บ ทางเดิน และพื้นที่ระงับ ก่อนเลือกตำแหน่งปลายทาง</p></article>
+                <article class="glass-card"><h3>ย้ายไปเมื่อไร ใครทำ?</h3><p>ย้อนดูต้นทาง ปลายทาง ผู้ทำรายการ เวลา และเลขอ้างอิงจาก Movement History</p></article>
+            </div>
+        </section>
+        <section id="features" class="section" aria-labelledby="features-title" tabindex="-1">
+            <div class="section-heading"><p class="eyebrow">BUILT AROUND YOUR WAREHOUSE</p><h2 id="features-title">เลือกงานที่ต้องทำ<br>เห็นข้อมูลที่ต้องใช้</h2><p class="text-muted">ตั้งแต่ผังและข้อมูลสินค้า ไปจนถึงเอกสารรับ–เบิกและรายงาน โดยคงตัวตนของ Coil แต่ละม้วน</p></div>
+            <div class="card-grid three feature-grid">
+                <article class="glass-card"><svg class="icon" aria-hidden="true"><use href="assets/icons/symbols.svg#map"></use></svg><h3>Visual Map &amp; Layout</h3><p>กำหนดผัง Grid แยกประเภทพื้นที่ Filter Zone / Status และ Scroll / Zoom ผังขนาดใหญ่ มีป้ายสถานะ ไม่ใช้สีอย่างเดียว</p></article>
+                <article class="glass-card"><svg class="icon" aria-hidden="true"><use href="assets/icons/symbols.svg#warehouses"></use></svg><h3>หลายโกดัง หลายตำแหน่ง</h3><p>แต่ละโกดังมีขนาดและโซนของตัวเอง ดู Current Warehouse / Zone / Position ของแต่ละ Coil ได้ชัดเจน</p></article>
+                <article class="glass-card"><svg class="icon" aria-hidden="true"><use href="assets/icons/symbols.svg#search"></use></svg><h3>ค้นหาแล้วไปยังตำแหน่ง</h3><p>ค้น Coil No., Heat, Lot, Material หรือ Grade เปิด Map เพื่อ Highlight Coil ที่ยังมีตำแหน่งจัดเก็บ</p></article>
+            </div>
+            <ol class="workflow card-grid four">
+                <li class="glass-card"><span class="step">01 · RECEIVE</span><h3>รับเข้าพร้อมตำแหน่ง</h3><p>รับ Coil หมายเลขใหม่ ทำเอกสารหลายม้วน เลือกโกดังและตำแหน่งแยกแต่ละรายการ ยืนยันบันทึกทั้งใบพร้อมกัน</p></li>
+                <li class="glass-card"><span class="step">02 · MOVE</span><h3>Move · ย้าย</h3><p>ย้ายภายในโกดัง ตรวจตำแหน่งปลายทาง และเก็บต้นทาง / ปลายทางโดยคงข้อมูลสินค้า</p></li>
+                <li class="glass-card"><span class="step">03 · TRANSFER</span><h3>Transfer · โอน</h3><p>โอนข้ามโกดังในรายการเดียว อัปเดตทั้งสองตำแหน่งและ Current Warehouse พร้อม TRANSFER</p></li>
+                <li class="glass-card"><span class="step">04 · ISSUE</span><h3>เบิกออกเป็นเอกสาร</h3><p>เลือก Coil AVAILABLE หลายม้วนจากหลายโกดัง ยืนยันทั้งใบ คืนช่องจัดเก็บ และเชื่อมประวัติรายม้วนกลับไปยังเอกสาร</p></li>
+            </ol>
+            <p class="small text-muted">ระบบตรวจสิทธิ์และสถานะล่าสุดก่อนบันทึก ไม่เปิดใช้งาน Master เดิมหรือปล่อย RESERVED / HOLD / DAMAGED เพื่อเบิกโดยอัตโนมัติ</p>
+        </section>
+        <section class="section dashboard-section" aria-labelledby="dashboard-title">
+            <div><p class="eyebrow">WAREHOUSE MANAGER VIEW</p><h2 id="dashboard-title">เห็นพื้นที่และสินค้า<br><span class="gradient-text">ก่อนตัดสินใจทำรายการ</span></h2><p class="text-muted">Dashboard แสดงจำนวนม้วน น้ำหนัก สถานะ และการใช้พื้นที่ พร้อมรายการเคลื่อนไหวล่าสุด ช่วยเริ่มตรวจสอบจากภาพรวมก่อนลงรายละเอียด</p>
+                <ul class="benefit-list"><li><strong>Movement History:</strong> Receive / Move / Transfer / Issue พร้อมผู้ทำรายการ เวลา และเลขอ้างอิง</li><li><strong>Reports:</strong> Current Inventory, Warehouse Utilization, Coil Aging และ Movement Report พร้อมตัวกรอง</li><li><strong>Master Activity:</strong> ดูการเปลี่ยนแปลงข้อมูลก่อน / หลัง สำหรับผู้มีสิทธิ์</li></ul>
+            </div>
+            <figure class="glass-card dashboard-preview"><figcaption><h3>Dashboard Preview</h3><p class="small text-muted">ตัวเลขสมมติสำหรับภาพประกอบ ไม่ใช่ผลลัพธ์หรือ SLA</p></figcaption>
+                <div class="kpi-grid"><div><span class="text-muted small">Coils ในคลัง</span><strong>6 <small>ม้วน</small></strong></div><div><span class="text-muted small">น้ำหนักรวม</span><strong>9,000.750 <small>kg</small></strong></div></div>
+                <div class="utilization"><div><strong>WH-A · Utilization</strong><span>6 / 11 ช่อง Coil</span></div><progress max="11" value="6" aria-label="ตัวอย่างโกดัง A ใช้พื้นที่ 6 จาก 11 ช่อง Coil">54.5%</progress></div>
+                <div class="sample-movement"><span class="preview-chip">MOVE</span><div><strong>MC-108 · A01 → A02</strong><p class="small text-muted">ตัวอย่างเลขอ้างอิง MOV-202610-00001</p></div></div>
+            </figure>
+        </section>
+        <section id="screens" class="section" aria-labelledby="screens-title" tabindex="-1">
+            <div class="section-heading"><p class="eyebrow">INSIDE MINTCOIL</p><h2 id="screens-title">หน้าจอจริง<br>จากงานคลังของทีม</h2><p class="text-muted">ตัวอย่างหน้าตา MintCoil v2 ตั้งแต่ภาพรวม การกำหนดพื้นที่ ไปจนถึงเอกสารและรายงาน</p></div>
+            <div class="screen-grid">
+                <figure class="glass-card screen-card"><a href="assets/images/screen-dashboard.webp" aria-label="เปิดภาพ Dashboard ขนาดเต็ม"><img src="assets/images/screen-dashboard.webp" width="1120" height="790" loading="lazy" decoding="async" alt="หน้าภาพรวม MintCoil พร้อมตัวชี้วัดสินค้าและพื้นที่ในสภาพแวดล้อมทดสอบ"></a><figcaption><p class="eyebrow">WAREHOUSE OVERVIEW</p><h3>เริ่มจากภาพรวมคลัง</h3><p>ดูจำนวนม้วน น้ำหนัก สถานะ และพื้นที่ ก่อนเจาะไปยังโกดังที่ต้องการ</p></figcaption></figure>
+                <figure class="glass-card screen-card"><a href="assets/images/screen-layout.webp" aria-label="เปิดภาพ Warehouse Layout ขนาดเต็ม"><img src="assets/images/screen-layout.webp" width="1120" height="790" loading="lazy" decoding="async" alt="หน้า Warehouse Layout แยกเครื่องมือเลือกโกดังและกำหนดขนาดออกจากพื้นที่ผัง"></a><figcaption><p class="eyebrow">VISUAL LAYOUT</p><h3>กำหนดพื้นที่ตามโกดัง</h3><p>เลือกโกดัง กำหนดขนาด Grid และจัดประเภทตำแหน่งจากพื้นที่ทำงานเดียวกัน</p></figcaption></figure>
+                <figure class="glass-card screen-card"><a href="assets/images/screen-receive.webp" aria-label="เปิดภาพ Receive Document ขนาดเต็ม"><img src="assets/images/screen-receive.webp" width="1120" height="790" loading="lazy" decoding="async" alt="ฟอร์มเอกสารรับเข้าแบ่งข้อมูลหัวใบ ข้อมูล Coil และปลายทางรายม้วน"></a><figcaption><p class="eyebrow">RECEIVE DOCUMENT</p><h3>รับหลายม้วนในหนึ่งใบ</h3><p>กรอกข้อมูลสินค้าและเลขใบส่งของ เลือกโกดังและตำแหน่งแยกแต่ละ Coil</p></figcaption></figure>
+                <figure class="glass-card screen-card"><a href="assets/images/screen-reports.webp" aria-label="เปิดภาพ Reports ขนาดเต็ม"><img src="assets/images/screen-reports.webp" width="1120" height="790" loading="lazy" decoding="async" alt="หน้ารายงาน MintCoil มีหมวดรายงานและตัวกรองขอบเขตข้อมูล"></a><figcaption><p class="eyebrow">INVENTORY &amp; MOVEMENT</p><h3>ตรวจสอบจากรายงาน</h3><p>ค้น Stock อายุสินค้า การใช้พื้นที่ และ Movement ตามขอบเขตที่เลือก</p></figcaption></figure>
+            </div>
+            <p class="small text-muted screen-note">ภาพหน้าจอจริงจากสภาพแวดล้อมทดสอบ บางหน้าที่ยังไม่มีรายการแสดงสถานะว่าง ตัดส่วนบัญชีผู้ใช้ออกจากภาพ ไม่ใช่ข้อมูลลูกค้าหรือผลลัพธ์ที่รับประกัน</p>
+        </section>
+        <section id="use-cases" class="section" aria-labelledby="use-cases-title" tabindex="-1"><p class="eyebrow">Built around warehouse work</p><h2 id="use-cases-title">สำหรับทีมที่ต้องรู้ว่า Coil อยู่ตรงไหน</h2>
+            <div class="card-grid three"><article class="glass-card"><h3>คลัง Coil และศูนย์กระจายสินค้า</h3><p>แยกโกดัง โซน และประเภทพื้นที่ตามผังจริง ให้ทีมค้นหาและเลือกช่องจัดเก็บจากแหล่งข้อมูลเดียวกัน</p></article><article class="glass-card"><h3>โรงงานที่จัดเก็บ Coil ก่อนใช้งาน</h3><p>ดูคุณลักษณะสินค้า สี ขนาด และน้ำหนัก ก่อนเคลื่อนย้ายหรือเบิกม้วนที่พร้อมใช้งาน</p></article><article class="glass-card"><h3>ผู้จัดการและทีมตรวจสอบ</h3><p>ดูพื้นที่ใช้งาน อายุ Stock และประวัติ พร้อมสิทธิ์ Admin / Manager / Operator / Viewer ตามหน้าที่</p></article></div>
+        </section>
+        <section class="section benefits glass-card" aria-labelledby="benefits-title"><div><p class="eyebrow">Clarity without extra noise</p><h2 id="benefits-title">ลดการเดา เพิ่มความชัดเจน</h2></div><ul class="benefit-list"><li>ค้นหาตำแหน่งจาก Coil No. แทนการอาศัยความจำเพียงอย่างเดียว</li><li>เห็นช่องว่างและพื้นที่ที่ไม่พร้อมจัดเก็บก่อนทำรายการ</li><li>เก็บ Stock และประวัติการเคลื่อนไหวสัมพันธ์กัน</li><li>ดูสินค้าและรายงานตามสิทธิ์ โดยไม่เปิดทุก Action ให้ทุกคน</li></ul></section>
+        <section id="pricing" class="section pricing-section" aria-labelledby="pricing-title" tabindex="-1">
+            <div class="section-heading"><p class="eyebrow">CLEAR WAYS TO START</p><h2 id="pricing-title">เลือกวิธีใช้งาน<br>ตามขนาดทีมและโกดัง</h2><p class="text-muted">ใช้ระบบมาตรฐานแบบ Subscription หรือเลือก License เมื่อต้องการติดตั้งตามขอบเขตโครงการ ราคาตั้งต้นและรายละเอียดบริการยืนยันในใบเสนอราคา</p></div>
+            <p class="notice small">Core และ Business มีฟีเจอร์หลักเหมือนกัน: Visual Map, รับเข้า / ย้าย / โอน / เบิก, เอกสารหลายม้วน, Dashboard และ Reports ต่างกันที่จำนวนผู้ใช้และโกดัง ไม่จำกัดงานสำคัญไว้เฉพาะแพ็กเกจใหญ่</p>
+            <div class="pricing-models">
+                <article class="glass-card pricing-model" aria-labelledby="subscription-title">
+                    <p class="eyebrow">HOSTED · STANDARD</p><h3 id="subscription-title">Subscription</h3><p class="small text-muted">รายเดือนหรือรายปี สำหรับใช้ระบบมาตรฐาน ไม่รวมการแก้โค้ดเฉพาะราย</p>
+                    <div class="pricing-plans">
+                        <article class="price-plan" data-model="subscription" data-plan="core" aria-labelledby="subscription-core-title">
+                            <h4 id="subscription-core-title">Core <span>ทีมเริ่มต้น</span></h4><p class="price-amount">฿2,900 <small>/ เดือน</small></p><p class="price-annual">฿29,000 / ปี · คิด 10 เดือน</p>
+                            <dl><div><dt>ผู้ใช้</dt><dd>5 บัญชี</dd></div><div><dt>โกดัง</dt><dd>2 แห่ง</dd></div><div><dt>ค่าติดตั้งเริ่มต้น</dt><dd>฿15,000</dd></div></dl>
+                            <a class="button" href="#contact" aria-label="สอบถามแพ็กเกจ Subscription Core">สอบถามแพ็กเกจนี้</a>
+                        </article>
+                        <article class="price-plan price-plan-featured" data-model="subscription" data-plan="business" aria-labelledby="subscription-business-title">
+                            <h4 id="subscription-business-title">Business <span>ทีมที่กำลังขยาย</span></h4><p class="price-amount">฿4,900 <small>/ เดือน</small></p><p class="price-annual">฿49,000 / ปี · คิด 10 เดือน</p>
+                            <dl><div><dt>ผู้ใช้</dt><dd>15 บัญชี</dd></div><div><dt>โกดัง</dt><dd>6 แห่ง</dd></div><div><dt>ค่าติดตั้งเริ่มต้น</dt><dd>฿29,000</dd></div></dl>
+                            <a class="button primary" href="#contact" aria-label="สอบถามแพ็กเกจ Subscription Business">สอบถามแพ็กเกจนี้</a>
+                        </article>
+                    </div>
+                    <p class="pricing-note">บริการมาตรฐานที่เสนอ: Hosting, Backup, อัปเดตมาตรฐาน และ Support ในวัน/เวลาทำการ ขอบเขตและต้นทุนบริการต้องยืนยันในใบเสนอราคา ไม่ใช่การรับประกัน SLA หรือรอบสำรองข้อมูลจากหน้านี้</p>
+                </article>
+                <article class="glass-card pricing-model" aria-labelledby="license-title">
+                    <p class="eyebrow">PERPETUAL · PROJECT SCOPE</p><h3 id="license-title">License + Customize</h3><p class="small text-muted">สิทธิ์ใช้งานถาวรตามสัญญา ติดตั้งตามโครงสร้างที่ตกลง งาน Customize ประเมินแยก</p>
+                    <div class="pricing-plans">
+                        <article class="price-plan" data-model="license" data-plan="core" aria-labelledby="license-core-title">
+                            <h4 id="license-core-title">Core <span>License</span></h4><p class="price-amount">฿149,000 <small>ครั้งเดียว</small></p><p class="price-annual">สิทธิ์ใช้งานถาวรตามสัญญา</p>
+                            <dl><div><dt>ผู้ใช้</dt><dd>5 บัญชี</dd></div><div><dt>โกดัง</dt><dd>2 แห่ง</dd></div><div><dt>ค่าติดตั้งเริ่มต้น</dt><dd>฿30,000</dd></div></dl>
+                            <a class="button" href="#contact" aria-label="สอบถามแพ็กเกจ License Core">สอบถามแพ็กเกจนี้</a>
+                        </article>
+                        <article class="price-plan price-plan-featured" data-model="license" data-plan="business" aria-labelledby="license-business-title">
+                            <h4 id="license-business-title">Business <span>License</span></h4><p class="price-amount">฿249,000 <small>ครั้งเดียว</small></p><p class="price-annual">สิทธิ์ใช้งานถาวรตามสัญญา</p>
+                            <dl><div><dt>ผู้ใช้</dt><dd>15 บัญชี</dd></div><div><dt>โกดัง</dt><dd>6 แห่ง</dd></div><div><dt>ค่าติดตั้งเริ่มต้น</dt><dd>฿50,000</dd></div></dl>
+                            <a class="button primary" href="#contact" aria-label="สอบถามแพ็กเกจ License Business">สอบถามแพ็กเกจนี้</a>
+                        </article>
+                    </div>
+                    <p class="pricing-note">ไม่รวม Hosting/เครื่องแม่ข่าย การสำรองข้อมูล และดูแลโครงสร้างพื้นฐาน บำรุงรักษาและอัปเดตตั้งแต่ปีที่ 2: <strong>18% ของค่า License / ปี</strong> ไม่รวมงานพัฒนาเพิ่มเติมแบบไม่จำกัด</p>
+                </article>
+            </div>
+            <div class="capacity-heading"><p class="eyebrow">ADD CAPACITY</p><h3>ต้องการเพิ่มผู้ใช้หรือโกดัง?</h3><p class="small text-muted">คิดเฉพาะส่วนที่เกินจากจำนวนซึ่งรวมในแพ็กเกจ ผู้ใช้เป็นบัญชีรายบุคคล</p></div>
+            <div class="capacity-grid">
+                <article class="glass-card" data-capacity="subscription"><h4>Subscription</h4><dl class="capacity-list"><div><dt>ผู้ใช้เพิ่ม <small>ต่อบัญชี / เดือน</small></dt><dd>฿200</dd></div><div><dt>โกดังเพิ่ม <small>ต่อแห่ง / เดือน</small></dt><dd>฿500</dd></div></dl></article>
+                <article class="glass-card" data-capacity="license"><h4>License</h4><dl class="capacity-list"><div><dt>ผู้ใช้เพิ่ม <small>สิทธิ์ถาวร / บัญชี</small></dt><dd>฿8,000</dd></div><div><dt>โกดังเพิ่ม <small>สิทธิ์ถาวร / แห่ง</small></dt><dd>฿15,000</dd></div></dl></article>
+            </div>
+            <p id="pricing-terms" class="small text-muted pricing-disclaimer">ราคาทั้งหมดเป็นราคาเริ่มต้นและไม่รวม VAT · ค่าติดตั้งแยกจากค่าใช้งาน/License โดยจำนวนรอบตั้งค่า อบรม และทดสอบระบุในใบเสนอราคา · ไม่รวมย้ายข้อมูล เชื่อม ERP/เครื่องชั่ง และงานพัฒนาเพิ่มเติม · ขอบเขตสิทธิ์ บริการ และเงื่อนไขยืนยันในใบเสนอราคาและสัญญาก่อนเริ่มงาน</p>
+        </section>
+        <section id="getting-started" class="section getting-started" aria-labelledby="start-title" tabindex="-1">
+            <div class="section-heading"><p class="eyebrow">A PRACTICAL START</p><h2 id="start-title">เริ่มคุยจากงานจริง<br>ไม่ต้องเดาระบบจากโบรชัวร์</h2><p class="text-muted">เตรียมโจทย์ของทีม เพื่อเลือกดูส่วนที่เกี่ยวข้องและตกลงขอบเขตก่อนเริ่มใช้งาน</p></div>
+            <ol class="card-grid four start-steps">
+                <li><span class="step">1</span><h3>เล่าโจทย์โกดัง</h3><p>จำนวนโกดัง ขนาดผัง ประเภทพื้นที่ และสิ่งที่ทีมต้องการติดตาม</p></li>
+                <li><span class="step">2</span><h3>ดูสาธิตตามงาน</h3><p>ค้นหา Coil รับเข้า ย้าย โอน และเบิก พร้อมตรวจประวัติ</p></li>
+                <li><span class="step">3</span><h3>กำหนดขอบเขต</h3><p>สรุปข้อมูลสินค้า สิทธิ์ผู้ใช้ การติดตั้ง และงานเพิ่มเติมที่ต้องประเมิน</p></li>
+                <li><span class="step">4</span><h3>ทดสอบก่อนเริ่มใช้</h3><p>วางแผนข้อมูลตั้งต้น ทดสอบขั้นตอน และให้ทีมยอมรับผลก่อนใช้งานจริง</p></li>
+            </ol>
+            <p class="notice small">ราคาเริ่มต้นอยู่ในส่วนแพ็กเกจ ขอบเขตการติดตั้ง Hosting การสำรองข้อมูล Support การย้ายข้อมูล และงานเพิ่มเติมต้องยืนยันในใบเสนอราคาก่อนเริ่มงาน</p>
+        </section>
+        <section id="faq" class="section faq-section" aria-labelledby="faq-title" tabindex="-1">
+            <div><p class="eyebrow">QUICK ANSWERS</p><h2 id="faq-title">ก่อนนัดดูระบบ<br>คุณอาจอยากรู้</h2><p class="text-muted">คำตอบเบื้องต้นเพื่อเตรียมโจทย์สำหรับคุยกับทีม</p><a class="text-link" href="#contact">ถามทีมงานโดยตรง <span aria-hidden="true">→</span></a></div>
+            <div class="faq-list">
+                <details><summary>MintCoil เหมาะกับทีมแบบไหน?</summary><p>เหมาะกับคลังและโรงงานที่จัดเก็บ Coil เป็นม้วน ต้องการรู้ตำแหน่งจริงในหลายโกดัง และตรวจสอบประวัติการเคลื่อนไหวรายม้วน</p></details>
+                <details><summary>แต่ละโกดังมีผังต่างกันได้ไหม?</summary><p>ได้ กำหนดขนาด Grid และโซนแยกตามโกดัง พร้อมประเภทพื้นที่ เช่น ช่อง Coil ทางเดิน เสา และพื้นที่ระงับ</p></details>
+                <details><summary>รับเข้าหรือเบิกหลายม้วนพร้อมกันได้ไหม?</summary><p>มีฟอร์มเอกสารรับเข้าและเบิกออก 1–100 ม้วนต่อใบ รองรับหลายโกดังในใบเดียว หากรายการหนึ่งไม่ผ่าน ระบบไม่บันทึก Stock สำเร็จเพียงบางส่วน หน้าทำรายการเดิมแบบม้วนเดียวยังมีอยู่ระหว่างปรับทางเข้าใช้งาน</p></details>
+                <details><summary>รองรับการเบิกบางส่วนหรือแนบใบส่งของไหม?</summary><p>ปัจจุบันทำรายการเป็นม้วนเต็ม ไม่เบิกบางส่วน กรอกเลขใบส่งของภายนอกได้ ส่วนการแนบไฟล์ใบส่งของยังอยู่ระหว่างพัฒนา</p></details>
+                <details><summary>เชื่อม MintERP หรือ Export Excel / PDF ได้แล้วหรือยัง?</summary><p>ยังไม่รวมในความสามารถปัจจุบัน ERP Integration, Excel / PDF Export และ Barcode / QR ต้องคุย Requirement และประเมินก่อน ไม่ได้เชื่อม MintERP อัตโนมัติเพียงเพราะอยู่ในตระกูล Mint</p></details>
+                <details><summary>ราคา การติดตั้ง และ Support เป็นอย่างไร?</summary><p>Subscription เริ่ม ฿2,900 / เดือน หรือ ฿29,000 / ปี; License เริ่ม ฿149,000 ครั้งเดียว ค่าติดตั้งคิดแยกและราคาไม่รวม VAT บำรุงรักษา License ตั้งแต่ปีที่ 2 คิด 18% / ปี ขอบเขต Hosting, Backup และ Support ต้องยืนยันในใบเสนอราคา <a href="#pricing">ดูแพ็กเกจและเงื่อนไข</a></p></details>
+            </div>
+        </section>
+        <section id="contact" class="section contact" aria-labelledby="contact-title" tabindex="-1"><p class="eyebrow">READY WHEN YOU ARE</p><h2 id="contact-title">อยากเห็นว่า MintCoil<br>เข้ากับโกดังของคุณอย่างไร?</h2><p>เล่าโจทย์ให้เราฟัง แล้วนัดดูขั้นตอนที่เกี่ยวข้องกับงานของทีมคุณ</p>
+            <div class="actions"><a class="button" href="mailto:sale@alexiasoft.co?subject=MintCoil%20Demo">นัดสาธิตผ่านอีเมล <span aria-hidden="true">↗</span></a><a class="button contact-phone" href="tel:+66616975959">โทร 061-697-5959</a></div>
+            <p id="contact-note" class="small">หรือส่งอีเมล <a href="mailto:sale@alexiasoft.co">sale@alexiasoft.co</a> · ช่องทาง AlexiaSoft ตามเว็บไซต์ MintERP</p>
+            <p id="launch-note" class="small">ยังไม่มี Public Demo หรือ URL เข้า Application ที่ยืนยัน การเปิดใช้งานจริงต้องผ่านการทดสอบและยอมรับจากทีมก่อน</p>
+        </section>
+        <section class="section" aria-labelledby="scope-title"><h2 id="scope-title" class="h3">ขอบเขตที่สื่อสารอย่างตรงไปตรงมา</h2><p class="small text-muted">หน้านี้แนะนำฟีเจอร์ที่พัฒนาแล้ว ไม่ใช่การรับรองขึ้น Production ส่วน Supplier, การปรับ / ปล่อยสถานะ Stock, Excel / PDF Export, Barcode / QR และ ERP Integration ยังเป็นงานอนาคต ต้องยืนยัน Requirement ก่อนพัฒนา</p>
+            <details id="privacy"><summary>ความเป็นส่วนตัว · ข้อมูลเบื้องต้น</summary><p class="small text-muted">หน้านี้ไม่มีแบบฟอร์ม ไม่มี Analytics และไม่ตั้ง Cookie ของเว็บไซต์ ผู้ให้บริการโฮสติ้งอาจมี Access Log ตามนโยบายของตน การคลิกลิงก์อีเมลหรือโทรศัพท์จะเปิดแอปของคุณเพื่อคุยกับ AlexiaSoft หน้านี้ไม่ส่งข้อมูลให้อัตโนมัติ นโยบายฉบับอนุมัติสำหรับ MintCoil ยังรอยืนยันก่อนเพิ่มแบบฟอร์มหรือบริการรับข้อมูลส่วนบุคคล</p></details>
+        </section>
+    </main>
+    <footer class="footer"><div class="container footer-main"><div><a class="brand" href="./"><img class="product-logo" src="assets/images/mintcoil_logo.png" width="879" height="259" loading="lazy" decoding="async" alt="MintCoil"><span class="brand-by">by AlexiaSoft</span></a><p class="small">Coil Warehouse Management System<br>ทุกม้วน ทุกตำแหน่ง ตรวจสอบได้จากข้อมูลเดียวกัน</p></div><nav aria-label="ลิงก์ท้ายหน้า"><a href="#overview">ภาพรวมระบบ</a><a href="#features">ความสามารถ</a><a href="#pricing">ราคา</a><a href="#getting-started">เริ่มใช้งาน</a><a href="https://minterp.alexiasoft.co/">MintERP · Mint Product Family ↗</a><a href="https://alexiasoft.co/">เว็บไซต์ AlexiaSoft ↗</a></nav><div class="footer-contact"><strong>คุยกับทีมงาน</strong><a href="mailto:sale@alexiasoft.co">sale@alexiasoft.co</a><a href="tel:+66616975959">061-697-5959</a></div></div><div class="container footer-bottom"><p class="small">© <span id="copyright-year">2026</span> AlexiaSoft · Mint Product Family</p><a href="#privacy">ความเป็นส่วนตัว · ข้อมูลเบื้องต้น</a><a href="#main">กลับด้านบน ↑</a></div></footer>
+</body>
+</html>
